@@ -1,7 +1,9 @@
 # Facebook-Movies-Data-Miner-and-Analyzer
+
 Mines Facebook's Official movies pages data and then analyse it to generate some insights
 
 ## **Mining and Exploring Facebook's Official Movies Pages Data**
+
 Recently i seen a video course of Mining Social Web-Facebook by Mikhail Klassen. So after seeing that course i learned about Facebook's Graph API and decided to use that knowledge and implement in some practical problem case and that's how i got inspiration for working on this project.
 
 Then i was thinking of some sort of topic with which many can found common grounds with and understand its analytics in realistic perspective. So i cameup with idea of scraping or mining data from facebook about Movies and use them to generate some relative stats and analytics.
@@ -28,6 +30,7 @@ graphAccess.request("search", {'q': 'Movies', 'type': 'page'})
 Now since we are concerned with getting official Movies page data only,we have to filter the movies pages data we are getting in step above as it contain all sorts of official or unofficial or pages not even belonging to a particular movie but only containing some movie keyword in it,so i did some research on all the fields facebook has for a page or one can say metadata on it.
 
 Then i came up with three filters we can apply to get the official Movies data:
+
 i) is_Verified :
 Facebook API returns is_Verified field for pages which are official and has a blue tick associated with it.So using this filter will restrcit our data to offcial pages only.
 
@@ -62,6 +65,7 @@ columns = ['Name',
 # Analytics on Movies data for generating some insights or stats
 
 Now did following analytics tasks on data selected as mentioned above:
+
 i) Generated plots for top ten movies with total likes received,comparative to each other
 
 ii) Plotted comparative reactions to each movie last 6 facebook posts in terms of likes,shares and comments on last 6 posts.
