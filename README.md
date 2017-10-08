@@ -59,7 +59,7 @@ columns = ['Name',
            'Relative Comments'] 
 ```
 
-# Analytics on Movies data for generatiing some insights or stats
+# Analytics on Movies data for generating some insights or stats
 
 Now did following analytics tasks on data selected as mentioned above:
 i) Generated plots for top ten movies with total likes received,comparative to each other
