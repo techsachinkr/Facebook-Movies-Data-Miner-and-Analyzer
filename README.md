@@ -10,7 +10,7 @@ Then i was thinking of some sort of topic with which many can found common groun
 
 In this project i had mined data from official Movies facebook pages using facebook's graph API and then used that data to generate some interesting insights and stats.
 
-# Getting the data
+## Getting the data
 
 Firstly i generated the temporary token for Facebook's Graph API Access by going to website "https://developers.facebook.com/tools/access_token/".
 
@@ -25,7 +25,7 @@ Now once i had established connection to graph api i worked on getting all the f
 graphAccess.request("search", {'q': 'Movies', 'type': 'page'})
 ```
 
-# Filtering data
+## Filtering data
 
 Now since we are concerned with getting official Movies page data only,we have to filter the movies pages data we are getting in step above as it contain all sorts of official or unofficial or pages not even belonging to a particular movie but only containing some movie keyword in it,so i did some research on all the fields facebook has for a page or one can say metadata on it.
 
@@ -40,7 +40,7 @@ Now once we got official pages ,next we have to filter out pages belonging to Mo
 iii) Genre:
 Next ,i observed that i was still getting some pages which are official and belonging to Movies category but is not actually a movie but some studio or cinema group page.So i decided to apply a filter of Genre checking if page has a genre associated with it and if it has then surely that will be a movie.
 
-# Selecting Data for Analytics
+## Selecting Data for Analytics
 
 Now in this project since i was focusing on doing analytics on top 10 movies(in terms of movie pages with most likes),so next i worked on sorting pages in the list with most likes and then takingtop ten records out of it for further filtering
 
@@ -62,7 +62,7 @@ columns = ['Name',
            'Relative Comments'] 
 ```
 
-# Analytics on Movies data for generating some insights or stats
+## Analytics on Movies data for generating some insights or stats
 
 Now did following analytics tasks on data selected as mentioned above:
 
@@ -75,7 +75,7 @@ iii) Plotting engagement of each movie facebook fanbase to last 6 posts in terms
 iv)Finding average engagement of top 10 movies in terms of average comments,likes and shares per fan.
 
 
-# The End/Further Analysis
+## The End/Further Analysis
 
 I learned a lot while doing this project ,specifically about Facebook's Graph API and manner facebook organises its data.
 Moreover i did also generated some really cool stats and figures by doing analysis of movies pages and posts data.
