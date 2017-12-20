@@ -89,11 +89,63 @@ Now did following analytics tasks on data selected as mentioned above:
 
 i) Generated plots for top ten movies with total likes received,comparative to each other
 
+![alt text](https://github.com/techsachinkr/Facebook-Movies-Data-Miner-and-Analyzer/blob/master/Data-Graph-plots/Popular-movies-and-likes-plot.png)
+
 ii) Plotted comparative reactions to each movie last 6 facebook posts in terms of likes,shares and comments on last 6 posts.
+
+![alt text](https://github.com/techsachinkr/Facebook-Movies-Data-Miner-and-Analyzer/blob/master/Data-Graph-plots/Movies-engagement-in-Comments-plot.png)
+![alt text](https://github.com/techsachinkr/Facebook-Movies-Data-Miner-and-Analyzer/blob/master/Data-Graph-plots/Movies-engagement-in-Likes-plot.png)
+![alt text](https://github.com/techsachinkr/Facebook-Movies-Data-Miner-and-Analyzer/blob/master/Data-Graph-plots/Movies-engagement-in-Shares-plot.png)
 
 iii) Plotting engagement of each movie facebook fanbase to last 6 posts in terms of relative likes,rellative shares and relative comments to last 6 posts.
 
+![alt text](https://github.com/techsachinkr/Facebook-Movies-Data-Miner-and-Analyzer/blob/master/Data-Graph-plots/Movies-engagement-in-Relative-comments-plot.png)
+![alt text](https://github.com/techsachinkr/Facebook-Movies-Data-Miner-and-Analyzer/blob/master/Data-Graph-plots/Movies-engagement-in-Relative-likes-plot.png)
+![alt text](https://github.com/techsachinkr/Facebook-Movies-Data-Miner-and-Analyzer/blob/master/Data-Graph-plots/Movies-engagement-in-Relative-shares-plot.png)
+
 iv)Finding average engagement of top 10 movies in terms of average comments,likes and shares per fan.
+
+```
+Average number of Fans or Likes per fan for top 10 movies
+Alvin and the Chipmunks           0.013494
+Big Momma's Movies                0.004496
+Fifty Shades                      0.025195
+Ice Age Movies                    0.000946
+Rio                               0.003722
+Scary Movie                       0.011480
+Scream Movies                     0.004574
+Taken                             0.039335
+War for the Planet of the Apes    0.009172
+X-Men Movies                      0.008788
+dtype: float64
+
+Average number of Shares per fan for top 10 movies
+Name
+Alvin and the Chipmunks           0.000728
+Big Momma's Movies                0.000311
+Fifty Shades                      0.015752
+Ice Age Movies                    0.000007
+Rio                               0.000087
+Scary Movie                       0.001034
+Scream Movies                     0.000682
+Taken                             0.001468
+War for the Planet of the Apes    0.000256
+X-Men Movies                      0.000630
+dtype: float64
+
+Average Comments per fan for top 10 movies
+Name
+Alvin and the Chipmunks           0.001641
+Big Momma's Movies                0.000521
+Fifty Shades                      0.004931
+Ice Age Movies                    0.000035
+Rio                               0.000113
+Scary Movie                       0.001456
+Scream Movies                     0.000130
+Taken                             0.001425
+War for the Planet of the Apes    0.000860
+X-Men Movies                      0.000578
+```
 
 
 ## The End/Further Analysis
