@@ -10,20 +10,24 @@ Then i was thinking of some sort of topic with which many can found common groun
 
 In this project i had mined data from official Movies facebook pages using facebook's graph API and then used that data to generate some interesting insights and stats.
 
-## Getting the data
+## Generating Facebook Graph API accesstoken
 
-Firstly i generated the temporary token for Facebook's Graph API Access by going to website "https://developers.facebook.com/tools/access_token/".
+Our first step will be,generating a access token for Facebook's Graph API access by going to website
+https://developers.facebook.com/tools/explorer/
 
-Then created a object for GraphAPI access with the access token generated
+ Note: Token generated here i a temporary access token,so once it expires,you have to generate a new one.
+
+Your access token would something like this :
 
 ```
-graphAccess = facebook.GraphAPI(ACCESS_TOKEN, version='2.10')
+QMBGEdEise1czAHrLSYyuYIvFQ....... (Continues ...A very long string :-))
 ```
-
-Now once i had established connection to graph api i worked on getting all the facebook Movies pages data
-```
+Now  create a object for GraphAPI access with the access token generated
+ ```
 graphAccess.request("search", {'q': 'Movies', 'type': 'page'})
 ```
+So once i established connection to graph api,iwe are good to go for getting all facebook movies pages data.
+
 
 ## Filtering data
 
@@ -40,9 +44,13 @@ Now once we got official pages ,next we have to filter out pages belonging to Mo
 iii) Genre:
 Next ,i observed that i was still getting some pages which are official and belonging to Movies category but is not actually a movie but some studio or cinema group page.So i decided to apply a filter of Genre checking if page has a genre associated with it and if it has then surely that will be a movie.
 
-## Selecting Data for Analytics
+ ```
+ fields = 'is_verified,category,genre'
+ totalVal=requests.get('{0}{1}?fields={2}&access_token={3}'.format(base_url,records['id'], fields, ACCESS_TOKEN)) 
+  ```
+## Selecting a subset of data for analytics
 
-Now in this project since i was focusing on doing analytics on top 10 movies(in terms of movie pages with most likes),so next i worked on sorting pages in the list with most likes and then takingtop ten records out of it for further filtering
+Now in this project since i am focusing on doing analytics on top 10 movies(in terms of movie pages with most likes),so next i worked on sorting pages in the list with most likes and then taking top ten records out of it for further filtering
 
 ```
 moviesidList.sort(key=lambda temp:temp[2],reverse=True) 
@@ -50,6 +58,19 @@ moviesidList.sort(key=lambda temp:temp[2],reverse=True)
 Next i also got last 6 posts from top ten movies pages to get number of likes,shares and comments onthose 6 posts respectively in order to determine fans engagement and comparative reactions
 
 ```
+#get pagefeed of a given page
+ pagefeed = graphAccess.get_connections(page_id, 'posts')
+ #Getting reactions of fans of movie page in terms of likes,shares and comments
+ likesCount = graphAccess.get_object(id=post_id, 
+                         fields=['likes.limit(0).summary(true)'])\
+                         ['likes']['summary']['total_count']
+commentsCount = graphAccess.get_object(id=post_id, 
+                         fields=['comments.limit(0).summary(true)'])\
+                         ['comments']['summary']['total_count']    
+sharesCount = graphAccess.get_object(id=post_id, 
+                         fields=['shares.limit(0)'])\
+                         ['shares']['count'] 
+#Pandas dataframe for movie informtion                             
 columns = ['Name',
            'Total Fans',
            'Post Number',
